@@ -1,18 +1,30 @@
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,Routes,Route, HashRouter } from 'react-router-dom';
+import React,{useState} from 'react';
 import './App.css';
 import Navbar from './Navbar';
+import News from './News';
+
 
 function App() {
+  const pageSize = 6
+  const apiKey = "1c4d2b6b47e04bd0973c79658ddb2b31"
+
+
+  
+  const [progress, setProgress] = useState(0)
+
+  const [mode, setMode] = useState('light')
+  const [text, setText] = useState('dark')
   return (
-   <BrowserRouter>
+   <HashRouter>
    
    
    <Navbar/>
    
 
    <Routes>
-          <Route exact path='/news-app' element={<News text={text} key='general' setProgress={setProgress} pageSize={pageSize} category='general' apikey={apiKey} />} />
+          <Route exact path='/' element={<News text={text} key='general' setProgress={setProgress} pageSize={pageSize} category='general' apikey={apiKey} />} />
           <Route exact path='/business' element={<News text={text} key='business' setProgress={setProgress} pageSize={pageSize} category='business' apikey={apiKey} />} />
           <Route exact path='/science' element={<News text={text} key='science' setProgress={setProgress} pageSize={pageSize} category='science' apikey={apiKey} />} />
           <Route exact path='/sports' element={<News text={text} key='sports' setProgress={setProgress} pageSize={pageSize} category='sports' apikey={apiKey} />} />
@@ -20,7 +32,7 @@ function App() {
           <Route exact path='/technology' element={<News text={text} key='technology' setProgress={setProgress} pageSize={pageSize} category='technology' apikey={apiKey} />} />
           <Route exact path='/health' element={<News text={text} key='health' setProgress={setProgress} pageSize={pageSize} category='health' apikey={apiKey} />} />
         </Routes>
-   </BrowserRouter>
+   </HashRouter>
 
 
 

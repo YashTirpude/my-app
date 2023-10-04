@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+
+.heading{
+  margin-top: 70px;
+}
+
+
+
+.dropdown{
+ display: none;
+
+}
+
+.navbar>.container-fluid{
+  display: flex;
+  justify-content: left;
+}
+
+
+
+
+@media screen and (max-width: 992px){
+  .dropdown{
+    display:block;
+  };
+
+ 
+
+}
+
