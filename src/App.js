@@ -17,9 +17,8 @@ function App() {
   const [mode, setMode] = useState('light')
   const [text, setText] = useState('dark')
   return (
-    <>
+    <BrowserRouter basename='/'>
      <Navbar/>
-    {/* // <BrowserRouter basename='/'> */}
    
    
    
@@ -33,9 +32,9 @@ function App() {
           <Route exact path='/health' element={<News text={text} key='health' setProgress={setProgress} pageSize={pageSize} category='health' apikey={apiKey} />} />
           <Route exact path='/business' element={<News text={text} key='business' setProgress={setProgress} pageSize={pageSize} category='business' apikey={apiKey} />} />
         </Routes> */}
-  {/* //  </BrowserRouter> */}
+   </BrowserRouter>
 
-</>
+
 
   );
 }
